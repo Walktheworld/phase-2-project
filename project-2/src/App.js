@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import './App.css';
 import MainContainer from "./containers/MainContainer";
 import {
@@ -7,9 +7,11 @@ import {
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ToBrewCon from "./containers/ToBrewCon";
+import Header from "./components/Header";
 
 
-class App extends Component {
+
+const App =()=>{
 
   // constructor(){
   //   super()
@@ -28,10 +30,9 @@ class App extends Component {
   //  })
   // }
 
-  render(){
-    
     return (
       <Router>
+        <Header/>
        <div>
          <NavBar />
           <Route exact path="/"  component={MainContainer} />
@@ -40,7 +41,6 @@ class App extends Component {
         </div>
       </Router>
    );
-  }
 };
 
 export default App

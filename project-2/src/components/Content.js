@@ -27,18 +27,13 @@ class Content extends Component{
                     <p><strong>IBU:</strong> {this.props.beer.ibu}</p>
                     <p><strong>Attenuation Level:</strong> {this.props.beer.attenuation_level}</p>
                     <p><strong>Ph Level:</strong> {this.props.beer.ph}</p>
-                    <p><strong>Food Pairng:</strong>
-                        <li>
-                            {this.props.beer.food_pairing[0]}
-                        </li>
-                        <li>
-                            {this.props.beer.food_pairing[1]}
-                        </li>
-                        <li>
-                            {this.props.beer.food_pairing[2]}
-                        </li>
+                    <div><strong>Food Pairng:</strong>
+                        <ul>
+                            {this.props.beer.food_pairing.map((arr, index)=>
+                                <li key={index}>{arr}</li>)}
+                        </ul>
 
-                    </p>
+                    </div>
                 </div>
             </div>
           );

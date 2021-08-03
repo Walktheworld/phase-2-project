@@ -1,44 +1,60 @@
 img {
   width: 20%;
   height: auto;
-  margin-right: 0px;
-  margin-left: 50px;
   margin-top: 10px;
+  margin-bottom: 10px;
   align-items: center;
-
-
 }
 
-.home, .my-list, .i-dont-know{
+.home, .myList, .beenBrewed{
   text-decoration: none;
   color:blue
 }
-.home:hover, .my-list:hover, .i-dont-know:hover {
+.home:hover, .myList:hover, .beenBrewed:hover {
   text-decoration: underline;
 }
 
-.home, .my-list, .i-dont-know:visited{
+.home, .myList, .beenBrewed:visited{
   text-decoration: none;
   color:blueviolet;
   
 }
+.ingList{
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  grid-gap: .5rem;
+  
 
+}
+.malts{
+  list-style: none ;
+
+}
+
+
+.image{
+  text-align: center;
+}
 
 .beer{  
   text-align: left;
   display: grid;
-  grid-template-columns: 15rem 35rem 30rem;
+  grid-template-columns: 15rem 35rem 20rem;
   grid-gap: 1rem;
   border-style:groove;
 }
 
-/* .myList{  
+.navbar{
+  text-align: center;
+}
+
+.myBeerList{  
   text-align: left;
   display: grid;
   grid-template-columns: 15rem 35rem 30rem;
   grid-gap: 1rem;
   border-style:groove;
-} */
+} 
 
 
 .App-header {

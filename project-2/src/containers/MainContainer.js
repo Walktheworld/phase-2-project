@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Content from "../components/Content";
-import Header from "../components/Header";
+
 
 
 
@@ -31,7 +31,6 @@ class MainContainer extends Component {
     render() {
       return (
         <div>
-          <Header/>
           {this.state.beer.map(beer=>
             <Content handleInfoClick= {this.handleInfoClick} beer= {beer} key={beer.id}/>)};
         </div>
