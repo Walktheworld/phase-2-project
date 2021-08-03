@@ -1,0 +1,53 @@
+img {
+  width: 20%;
+  height: auto;
+  margin-right: 0px;
+  margin-left: 50px;
+  margin-top: 10px;
+  align-items: center;
+
+
+}
+
+.home, .my-list, .i-dont-know{
+  text-decoration: none;
+  color:blue
+}
+.home:hover, .my-list:hover, .i-dont-know:hover {
+  text-decoration: underline;
+}
+
+.home, .my-list, .i-dont-know:visited{
+  text-decoration: none;
+  color:blueviolet;
+  
+}
+
+
+.beer{  
+  text-align: left;
+  display: grid;
+  grid-template-columns: 15rem 35rem 30rem;
+  grid-gap: 1rem;
+  border-style:groove;
+}
+
+/* .myList{  
+  text-align: left;
+  display: grid;
+  grid-template-columns: 15rem 35rem 30rem;
+  grid-gap: 1rem;
+  border-style:groove;
+} */
+
+
+.App-header {
+  background-color: #464950;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
