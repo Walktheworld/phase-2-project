@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import './App.css';
 import MainContainer from "./containers/MainContainer";
 import {
@@ -11,36 +11,38 @@ import Header from "./components/Header";
 
 
 
-const App =()=>{
+class App extends Component{
 
-  // constructor(){
-  //   super()
-  //   this.state= {
-  //     beer:[]
-  //   }
-  // }
+  constructor(){
+    super()
+    this.state= {
+      beer:[]
+    }
+  }
 
-  // componentDidMount(){
-  //   fetch('https://api.punkapi.com/v2/beers?page=2&per_page=80')
-  //     .then(res => res.json())
-  //     .then(data=>{
-  //       this.setState({
-  //         beer: data
-  //       })
-  //  })
-  // }
+  componentDidMount(){
+    fetch('https://api.punkapi.com/v2/beers?page=2&per_page=50')
+      .then(res => res.json())
+      .then(data=>{
+        this.setState({
+          beer: data
+        })
+   })
+  }
 
+  render(){
     return (
       <Router>
         <Header/>
        <div>
          <NavBar />
-          <Route exact path="/"  component={MainContainer} />
-          <Route exact path="/myList"  component={ToBrewCon} />
+          <Route exact path="/"  render= {(props)=> <MainContainer beer={this.state.beer}/>} />
+          <Route exact path="/myList"  render= {(props)=> <ToBrewCon beer={this.state.beer}/>}/>
           <Route exact path="/been-there-brewed-that"/>
         </div>
       </Router>
    );
+  }
 };
 
 export default App

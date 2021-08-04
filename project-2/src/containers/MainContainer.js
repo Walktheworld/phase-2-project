@@ -4,34 +4,21 @@ import Content from "../components/Content";
 
 
 
-class MainContainer extends Component {
-    constructor(){
-      super()
-      this.state= {
-        beer:[]
-      }
-    }
-  
-    componentDidMount(){
-      fetch('https://api.punkapi.com/v2/beers?page=2&per_page=50')
-        .then(res => res.json())
-        .then(data=>{
-          this.setState({
-            beer: data
-          })
-     })
-    }
 
-  
+
+class MainContainer extends Component {
+
     handleInfoClick=()=>{
-      console.log("button clicked")
+      console.log("add like button")
+
     }
 
   
     render() {
+
       return (
         <div>
-          {this.state.beer.map(beer=>
+          {this.props.beer.map(beer=>
             <Content handleInfoClick= {this.handleInfoClick} beer= {beer} key={beer.id}/>)};
         </div>
         )

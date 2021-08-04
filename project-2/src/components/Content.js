@@ -1,35 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Content extends Component{
+const Content= props=>{
 
-
-
-    render(){
         return (
             <div className="beer">
                 <div className="image">
                     <div>
-                        <img alt="oh no!" src={this.props.beer.image_url}  />
+                        <img alt="oh no!" src={props.beer.image_url}  />
                     </div>
                     <div className="buttons">
-                        <button onClick={this.props.handleInfoClick}>More Info</button>
-                        <button onClick={this.props.handleClick}>Add to Favorite</button>
+                        <button onClick={props.handleInfoClick}>More Info</button>
+                        <button onClick={props.handleClick}>Add to Favorite</button>
                     </div>
                 </div>
                 
                 <div className="info">
-                    <h3>{this.props.beer.name}</h3>
-                    <p>{this.props.beer.tagline}</p>
-                    <p>{this.props.beer.description}</p>
+                    <h3>{props.beer.name}</h3>
+                    <p>{props.beer.tagline}</p>
+                    <p>{props.beer.description}</p>
                 </div>  
                 <div>             
-                    <p><strong>ABV:</strong> {this.props.beer.abv}%</p>
-                    <p><strong>IBU:</strong> {this.props.beer.ibu}</p>
-                    <p><strong>Attenuation Level:</strong> {this.props.beer.attenuation_level}</p>
-                    <p><strong>Ph Level:</strong> {this.props.beer.ph}</p>
+                    <p><strong>ABV:</strong> {props.beer.abv}%</p>
+                    <p><strong>IBU:</strong> {props.beer.ibu}</p>
+                    <p><strong>Attenuation Level:</strong> {props.beer.attenuation_level}</p>
+                    <p><strong>Ph Level:</strong> {props.beer.ph}</p>
                     <div><strong>Food Pairng:</strong>
                         <ul>
-                            {this.props.beer.food_pairing.map((arr, index)=>
+                            {props.beer.food_pairing.map((arr, index)=>
                                 <li key={index}>{arr}</li>)}
                         </ul>
 
@@ -37,7 +34,6 @@ class Content extends Component{
                 </div>
             </div>
           );
-    }
 }
 
 export default Content;
