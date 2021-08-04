@@ -16,12 +16,13 @@ class App extends Component{
   constructor(){
     super()
     this.state= {
-      beer:[]
+      beer:[],
+      beerFavs: [],
     }
   }
 
   componentDidMount(){
-    fetch('https://api.punkapi.com/v2/beers?page=2&per_page=50')
+    fetch('https://api.punkapi.com/v2/beers?page=3&per_page=25')
       .then(res => res.json())
       .then(data=>{
         this.setState({
@@ -30,13 +31,26 @@ class App extends Component{
    })
   }
 
+  handleInfoClick=()=>{
+    console.log("add like button")
+
+  }
+
+  beerFavBtn = (id) => {
+    if (!this.state.beer.find(bid => bid === id)){
+      this.setState({
+        beerFavs: [...this.state.beerFavs, id]
+      })
+    }
+  }
+
   render(){
     return (
       <Router>
         <Header/>
        <div>
          <NavBar />
-          <Route exact path="/"  render= {(props)=> <MainContainer beer={this.state.beer}/>} />
+          <Route exact path="/"  render= {(props)=> <MainContainer beer={this.state.beer} handleInfoClick={this.handleInfoClick} beerFavBtn={this.beerFavBtn}/>} />
           <Route exact path="/myList"  render= {(props)=> <ToBrewCon beer={this.state.beer}/>}/>
           <Route exact path="/been-there-brewed-that"/>
         </div>

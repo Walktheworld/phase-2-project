@@ -8,10 +8,6 @@ import Content from "../components/Content";
 
 class MainContainer extends Component {
 
-    handleInfoClick=()=>{
-      console.log("add like button")
-
-    }
 
   
     render() {
@@ -19,7 +15,7 @@ class MainContainer extends Component {
       return (
         <div>
           {this.props.beer.map(beer=>
-            <Content handleInfoClick= {this.handleInfoClick} beer= {beer} key={beer.id}/>)};
+            <Content handleInfoClick= {this.props.handleInfoClick} beerFavBtn={this.props.beerFavBtn} beer= {beer} key={beer.id}/>)};
         </div>
         )
       }
