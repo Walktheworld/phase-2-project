@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import MyList from "../components/MyList";
+import BrewList from "../components/BrewList";
 
 
 class ToBrewCon extends Component{
 
     render(){
+        
+        
         return <div className="toBrew">
             {this.props.beer.map(beer=>
-                <MyList beer= {beer} key={beer.id}/>)}
+                <BrewList beer= {beer} key={beer.id}/>)}
             </div>
     }
 }

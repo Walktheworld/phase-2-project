@@ -56,6 +56,13 @@ img {
   border-style:groove;
 } 
 
+.nextBeerList{  
+  text-align: left;
+  display: grid;
+  grid-template-columns: 15rem 35rem 30rem;
+  grid-gap: 1rem;
+  border-style:groove;
+} 
 
 .App-header {
   background-color: #464950;

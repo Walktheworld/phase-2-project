@@ -1,16 +1,14 @@
 import React from "react";
 
 
-const MyList = props =>{
+
+const NextBrew = props =>{
 
         return (
-            <div className="myBeerList">
+            <div className="nextBeerList">
                 <div className="image">
                     <div>
                         <img alt="BEER!" src={props.beer.image_url}  />
-                    </div>
-                    <div className="buttons">
-                        <button >push me</button>
                     </div>
                 </div>
                 
@@ -45,10 +43,16 @@ const MyList = props =>{
                     <p><strong>Boil Volume:</strong> {props.beer.volume.value} {props.beer.volume.unit}</p>
                     <p><strong>Mash Temperature:</strong> {props.beer.method.mash_temp[0].temp.value} {props.beer.method.mash_temp[0].temp.unit}</p>
                     <p><strong>Fermentation Temperature:</strong> {props.beer.method.fermentation.temp.value} {props.beer.method.fermentation.temp.unit}</p>
+                    <p><strong>SRM:</strong> {props.beer.srm}</p>
+                    <p><small>SRM scale (1=light 60=dark 200=black)</small></p>
+                    <p><strong>Initial Gravity:</strong> {props.beer.target_og}</p>
+                    <p><strong>Final Gravity:</strong> {props.beer.target_fg}</p>
+
+                    
 
                 </div>
             </div>
         );
 }
 
-export default MyList;
+export default NextBrew;

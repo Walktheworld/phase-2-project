@@ -8,6 +8,7 @@ import {
 import NavBar from './components/NavBar';
 import ToBrewCon from "./containers/ToBrewCon";
 import Header from "./components/Header";
+import NextBrew from "./components/NextBrew";
 
 
 
@@ -36,27 +37,32 @@ class App extends Component{
 
   }
 
-  beerFavBtn = (id) => {
-    if (!this.state.beer.find(bid => bid === id)){
-      this.setState({
-        beerFavs: [...this.state.beerFavs, id]
-      })
+  beerFavBtn = (beerId) => {
+
+    if(beerId){
+         let nextBeer = beerId
+  
+      this.setState({ beerFavs: nextBeer });
     }
+    else(console.log("uh oh"))
+    
+ 
   }
 
   render(){
     return (
       <Router>
         <Header/>
-       <div>
+       <>
          <NavBar />
           <Route exact path="/"  render= {(props)=> <MainContainer beer={this.state.beer} handleInfoClick={this.handleInfoClick} beerFavBtn={this.beerFavBtn}/>} />
-          <Route exact path="/myList"  render= {(props)=> <ToBrewCon beer={this.state.beer}/>}/>
-          <Route exact path="/been-there-brewed-that"/>
-        </div>
+          <Route exact path="/brewList"  render= {(props)=> <ToBrewCon beer={this.state.beer}/>}/>
+          <Route exact path="/next-to-brew" render= {(props)=> <NextBrew beer={this.state.beerFavs}/>}/>
+        </>
       </Router>
    );
   }
 };
 
 export default App
+

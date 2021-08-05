@@ -10,7 +10,7 @@ const Content= props=>{
                     </div>
                     <div className="buttons">
                         <button onClick={props.handleInfoClick}>More Info</button>
-                        <button onClick={props.beerFavBtn}>Add to Favorite</button>
+                        <button onClick={() => props.beerFavBtn(props.beer)}>Next Brew</button>
                     </div>
                 </div>
                 
