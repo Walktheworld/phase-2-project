@@ -16,7 +16,7 @@ class MainContainer extends Component {
       return (
         <div>
           {this.props.beer.map(beer=>
-            <Content handleInfoClick= {this.props.handleInfoClick} beerFavBtn={this.props.beerFavBtn} beer= {beer} key={beer.id}/>)};
+            <Content  beerFavBtn={this.props.beerFavBtn} beer= {beer} key={beer.id}/>)};
         </div>
         )
       }

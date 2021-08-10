@@ -1,4 +1,7 @@
 import React from "react";
+import LikeBtn from "./LikeBtn";
+
+
 
 const Content= props=>{
 
@@ -9,7 +12,7 @@ const Content= props=>{
                         <img alt="oh no!" src={props.beer.image_url}  />
                     </div>
                     <div className="buttons">
-                        <button onClick={props.handleInfoClick}>More Info</button>
+                        <LikeBtn/>
                         <button onClick={() => props.beerFavBtn(props.beer)}>Next Brew</button>
                     </div>
                 </div>
