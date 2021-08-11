@@ -16,29 +16,35 @@ class App extends Component{
 
   constructor(){
     super()
-    this.state= 
+    this.state= JSON.parse(window.localStorage.getItem('state')) ||
       {
       beer:[],
       beerFavs: [],}
   }
+
 
   componentDidMount(){
     fetch('https://api.punkapi.com/v2/beers?page=3&per_page=20')
       .then(res => res.json())
       .then(data=>{
         this.setState({
-          beer: data
+          beer: data,
         })
    })
   }
 
+  setState(state) {
+    window.localStorage.setItem('state', JSON.stringify(state));
+    super.setState(state);
+  }
 
   beerFavBtn = (beerId) => {
     if(beerId){
   
       this.setState({ beerFavs: beerId });
     }
-    else(console.log("uh oh"))
+    else(console.log("no beer found"))
+    
  
   }
 

@@ -9,9 +9,6 @@ const BrewList = props =>{
                     <div>
                         <img alt="BEER!" src={props.beer.image_url}  />
                     </div>
-                    <div className="buttons">
-                        <button >push me</button>
-                    </div>
                 </div>
                 
                 <div className="info">

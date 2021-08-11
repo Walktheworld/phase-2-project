@@ -4,12 +4,13 @@ import BrewList from "../components/BrewList";
 
 class ToBrewCon extends Component{
 
+
     render(){
         
         
         return <div className="toBrew">
             {this.props.beer.map(beer=>
-                <BrewList beer= {beer} key={beer.id}/>)}
+                <BrewList beer= {beer} key={beer.id} />)}
             </div>
     }
 }

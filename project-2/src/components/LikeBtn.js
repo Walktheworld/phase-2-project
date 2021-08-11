@@ -8,10 +8,11 @@ class LikeBtn extends Component{
     }
     
 
-    handleInfoClick=()=>{
+    handleInfoClick=(e)=>{
         this.setState({
             liked: !this.state.liked
         })
+        e.preventDefault()
       }
     
   

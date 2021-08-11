@@ -52,7 +52,7 @@ const NextBrew = props =>{
 
                 </div>
             </div>
-        );
+        );        
 }
 
 
