@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const NextBrew = props =>{
 
         return (
@@ -54,7 +52,5 @@ const NextBrew = props =>{
             </div>
         );        
 }
-
-
 
 export default NextBrew;

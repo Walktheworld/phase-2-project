@@ -1,8 +1,6 @@
 import React from "react";
 import LikeBtn from "./LikeBtn";
 
-
-
 const Content= props=>{
 
         return (

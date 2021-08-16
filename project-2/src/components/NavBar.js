@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink} from 'react-router-dom';
 
-
 const style = {
   width: '50px',
   padding: '12px',
