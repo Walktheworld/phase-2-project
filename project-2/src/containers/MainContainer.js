@@ -1,15 +1,7 @@
 import React, { Component } from "react";
 import Content from "../components/Content";
 
-
-
-
-
-
 class MainContainer extends Component {
-  
-
-
   
     render() {
 

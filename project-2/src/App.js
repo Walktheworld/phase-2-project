@@ -10,8 +10,6 @@ import ToBrewCon from "./containers/ToBrewCon";
 import Header from "./components/Header";
 import NextBrew from "./components/NextBrew";
 
-
-
 class App extends Component{
 
   constructor(){
@@ -21,7 +19,6 @@ class App extends Component{
       beer:[],
       beerFavs: [],}
   }
-
 
   componentDidMount(){
     fetch('https://api.punkapi.com/v2/beers?page=3&per_page=20')
