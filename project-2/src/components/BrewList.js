@@ -44,9 +44,6 @@ const BrewList = props =>{
                     <p><strong>SRM:</strong> {props.beer.srm}</p>
                     <p><strong>Initial Gravity:</strong> {props.beer.target_og}</p>
                     <p><strong>Final Gravity:</strong> {props.beer.target_fg}</p>
-
-                    {/* <p><small>SRM scale (1=light 60=dark 200=black)</small></p> */}
-
                 </div>
             </div>
         );
