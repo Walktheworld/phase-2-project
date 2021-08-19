@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const BrewList = props =>{
 
         return (
@@ -8,6 +9,7 @@ const BrewList = props =>{
                     <div>
                         <img alt="BEER!" src={props.beer.image_url}  />
                     </div>
+                    <button onClick={props.removeFav}>Remove</button>
                 </div>
                 
                 <div className="info">

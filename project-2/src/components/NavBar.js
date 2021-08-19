@@ -10,9 +10,9 @@ const style = {
 const NavBar = () => {
   return (
     <div className="navbar">
-      <NavLink className="home" to="/" style= {style}>Home</NavLink>
+      <NavLink className="home" to="/" style= {style}>Home</NavLink>  
+      <NavLink className="viewBrew" to="/viewBrew" style= {style}>View Brew</NavLink>
       <NavLink className= "brewList" to="/brewList" style= {style}>To Brew or Not To Brew</NavLink>
-      <NavLink className="nextToBrew" to="/next-to-brew" style= {style}>Next Brew</NavLink>
     </div>
   );
 };

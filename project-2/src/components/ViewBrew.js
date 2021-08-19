@@ -1,12 +1,17 @@
 import React from "react";
+import LikeBtn from "./LikeBtn";
+// change all to view brew
+const ViewBrew = props =>{
 
-const NextBrew = props =>{
-
+    if(props.beer){
         return (
             <div className="nextBeerList">
                 <div className="image">
                     <div>
                         <img alt="BEER!" src={props.beer.image_url}  />
+                    </div>
+                    <div className="buttons">
+                        <LikeBtn addToFav = {props.addToFav} beer={props.beer}/>
                     </div>
                 </div>
                 
@@ -50,7 +55,12 @@ const NextBrew = props =>{
 
                 </div>
             </div>
-        );        
+        ); 
+    
+    }
+    else{
+        return (<div>No beers selected</div>)
+    }       
 }
 
-export default NextBrew;
+export default ViewBrew;

@@ -4,13 +4,21 @@ class LikeBtn extends Component{
     state={
         liked: false
     }
-    
-    handleInfoClick=(e)=>{
+    handleInfoClick=()=>{
+        this.props.addToFav(this.props.beer)
         this.setState({
             liked: !this.state.liked
         })
-        e.preventDefault()
-      }
+
+        fetch('http://localhost:3000/beer', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(this.props.beer)
+        })
+    }
   
     render(){
         const onLike= this.state.liked ? "red" : "grey"

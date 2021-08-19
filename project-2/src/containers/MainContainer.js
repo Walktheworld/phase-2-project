@@ -8,7 +8,7 @@ class MainContainer extends Component {
       return (
         <div>
           {this.props.beer.map(beer=>
-            <Content  beerFavBtn={this.props.beerFavBtn} beer= {beer} key={beer.id}/>)};
+            <Content  nextBrew= {this.props.nextBrew} addToFav={this.props.addToFav} beer= {beer} key={beer.id}/>)};
         </div>
         )
       }

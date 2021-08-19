@@ -1,7 +1,14 @@
 import React from "react";
 import LikeBtn from "./LikeBtn";
+import { useHistory } from "react-router-dom";
 
 const Content= props=>{
+    const history = useHistory()
+
+    const handleclick= ()=>{
+        props.nextBrew(props.beer)
+        history.push('/viewBrew')
+    }
 
         return (
             <div className="beer">
@@ -10,8 +17,8 @@ const Content= props=>{
                         <img alt="oh no!" src={props.beer.image_url}  />
                     </div>
                     <div className="buttons">
-                        <LikeBtn/>
-                        <button onClick={() => props.beerFavBtn(props.beer)}>Next Brew</button>
+                        <LikeBtn addToFav = {props.addToFav} beer={props.beer}/>
+                        <button onClick={handleclick}>View Brew</button>
                     </div>
                 </div>
                 
