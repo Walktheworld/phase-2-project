@@ -1,6 +1,6 @@
 import React from "react";
 import LikeBtn from "./LikeBtn";
-// change all to view brew
+
 const ViewBrew = props =>{
 
     if(props.beer){
