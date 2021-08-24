@@ -15,15 +15,15 @@ class App extends Component{
 
   constructor(){
     super()
-    this.state= 
-      {
+    this.state= {
       beer:[],
+      viewBrew: null,
       favBeers: [],
-      viewBrew: null,}
+    }
   }
 
   componentDidMount(){
-    fetch('https://api.punkapi.com/v2/beers?page=3&per_page=20')
+    fetch('https://api.punkapi.com/v2/beers?page=1&per_page=20')
       .then(res => res.json())
       .then(data=>{
         this.setState({
@@ -54,11 +54,7 @@ class App extends Component{
     })
   }
 
-  removeFav = (beer)=>{
-    const removeBeer = this.state.favBeers.filter( favBeers => favBeers.id !== beer.id)
-    this.setState({favBeers:removeBeer})
 
-  }
 
   render(){
     return (
@@ -69,7 +65,7 @@ class App extends Component{
           <Switch>
             <Route exact path="/"  render= {()=> <MainContainer beer={this.state.beer} nextBrew={this.nextBrew} addToFav = {this.addToFav}/>} />
             <Route exact path="/viewBrew" render= {()=> <ViewBrew beer={this.state.viewBrew} addToFav = {this.addToFav}/>}/>
-            <Route exact path="/brewList"  render= {()=> <ToBrewCon beer={this.state.favBeers} removeFav= {this.removeFav}/>}/>
+            <Route exact path="/brewList"  render= {()=> <ToBrewCon beer={this.state.favBeers} />}/>
           </Switch>
         </>
       </Router>
