@@ -4,7 +4,7 @@ class LikeBtn extends Component{
     state={
         liked: false
     }
-    handleInfoClick=()=>{
+    handleHeartClick=()=>{
         this.props.addToFav(this.props.beer)
         this.setState({
             liked: !this.state.liked
@@ -23,7 +23,7 @@ class LikeBtn extends Component{
     render(){
         const onLike= this.state.liked ? "red" : "grey"
          return (
-            <button id="heart" onClick={this.handleInfoClick} style= {{color: onLike}}>♥</button>
+            <button id="heart" onClick={this.handleHeartClick} style= {{color: onLike}}>♥</button>
         );
     }
 };
